@@ -349,7 +349,7 @@ function Game(props: GameProps) {
               );
             }}
           >
-            Share emoji results
+            Partage des résults en emoji
           </button>
         )}
       </p>

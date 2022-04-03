@@ -147,9 +147,9 @@ function App() {
               >
                 {
                   [
-                    `Guesses must be valid dictionary words.`,
-                    `Wordle's "Hard Mode". Green letters must stay fixed, and yellow letters must be reused.`,
-                    `An even stricter Hard Mode. Yellow letters must move away from where they were clued, and gray clues must be obeyed.`,
+                    `Les mots doivent exister.`,
+                    `Mode dur. Les lettres vertes doivent rester, les jaunes doivent bouger.`,
+                    `Encore plus dur. Les lettres jaunes doivent bouger, et on doit obéir aux grises.`,
                   ][difficulty]
                 }
               </div>
@@ -185,10 +185,7 @@ function App() {
         hidden={page !== "game"}
         difficulty={difficulty}
         colorBlind={colorBlind}
-        keyboardLayout={keyboard.replaceAll(
-          /[BE]/g,
-          (x) => (enterLeft ? "EB" : "BE")["BE".indexOf(x)]
-        )}
+        keyboardLayout={keyboard}
       />
     </div>
   );
