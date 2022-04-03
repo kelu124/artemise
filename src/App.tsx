@@ -43,7 +43,7 @@ function App() {
   const [difficulty, setDifficulty] = useSetting<number>("difficulty", 0);
   const [keyboard, setKeyboard] = useSetting<string>(
     "keyboard",
-    "qwertyuiop-asdfghjkl-BzxcvbnmE"
+    "azertyuiop-qsdfghjkl-BwxcvbnmE"
   );
   const [enterLeft, setEnterLeft] = useSetting<boolean>("enter-left", false);
 
@@ -84,11 +84,11 @@ function App() {
       </h1>
       <div className="top-right">
         {page !== "game" ? (
-          link("❌", "Close", "game")
+          link("❌", "Fermer", "game")
         ) : (
           <>
-            {link("❓", "About", "about")}
-            {link("⚙️", "Settings", "settings")}
+            {link("❓", "A propos", "about")}
+            {link("⚙️", "Paramètres", "settings")}
           </>
         )}
       </div>
@@ -101,7 +101,7 @@ function App() {
         }}
       >
         <a href={seed ? "?random" : "?seed=" + todaySeed}>
-          {seed ? "Random" : "Today's"}
+          {seed ? "Aléatoire" : "Aujourd'hui"}
         </a>
       </div>
       {page === "about" && <About />}
@@ -114,7 +114,7 @@ function App() {
               checked={dark}
               onChange={() => setDark((x: boolean) => !x)}
             />
-            <label htmlFor="dark-setting">Dark theme</label>
+            <label htmlFor="dark-setting">Theme sombre</label>
           </div>
           <div className="Settings-setting">
             <input
@@ -123,7 +123,7 @@ function App() {
               checked={colorBlind}
               onChange={() => setColorBlind((x: boolean) => !x)}
             />
-            <label htmlFor="colorblind-setting">High-contrast colors</label>
+            <label htmlFor="colorblind-setting">Couleurs contrastées</label>
           </div>
           <div className="Settings-setting">
             <input
@@ -135,8 +135,8 @@ function App() {
               onChange={(e) => setDifficulty(+e.target.value)}
             />
             <div>
-              <label htmlFor="difficulty-setting">Difficulty:</label>
-              <strong>{["Normal", "Hard", "Ultra Hard"][difficulty]}</strong>
+              <label htmlFor="difficulty-setting">Difficulté:</label>
+              <strong>{["Normale", "Dure", "Super dure"][difficulty]}</strong>
               <div
                 style={{
                   fontSize: 14,
@@ -163,8 +163,8 @@ function App() {
               value={keyboard}
               onChange={(e) => setKeyboard(e.target.value)}
             >
-              <option value="qwertyuiop-asdfghjkl-BzxcvbnmE">QWERTY</option>
               <option value="azertyuiop-qsdfghjklm-BwxcvbnE">AZERTY</option>
+              <option value="qwertyuiop-asdfghjkl-BzxcvbnmE">QWERTY</option>
               <option value="qwertzuiop-asdfghjkl-ByxcvbnmE">QWERTZ</option>
               <option value="BpyfgcrlE-aoeuidhtns-qjkxbmwvz">Dvorak</option>
               <option value="qwfpgjluy-arstdhneio-BzxcvbkmE">Colemak</option>

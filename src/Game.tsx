@@ -99,8 +99,8 @@ function Game(props: GameProps) {
   });
   const [hint, setHint] = useState<string>(
     challengeError
-      ? `Invalid challenge string, playing random game.`
-      : `Make your first guess!`
+      ? `Code défi invalide, partie aléatoire.`
+      : `Faites vos jeux!`
   );
   const currentSeedParams = () =>
     `?seed=${seed}&length=${wordLength}&game=${gameNumber}`;
@@ -261,7 +261,7 @@ function Game(props: GameProps) {
   return (
     <div className="Game" style={{ display: props.hidden ? "none" : "block" }}>
       <div className="Game-options">
-        <label htmlFor="wordLength">Letters:</label>
+        <label htmlFor="wordLength">Lettres:</label>
         <input
           type="range"
           min={minLength}
@@ -281,7 +281,7 @@ function Game(props: GameProps) {
             setCurrentGuess("");
             setTarget(randomTarget(length));
             setWordLength(length);
-            setHint(`${length} letters`);
+            setHint(`${length} lettres`);
           }}
         ></input>
         <button
@@ -289,13 +289,13 @@ function Game(props: GameProps) {
           disabled={gameState !== GameState.Playing || guesses.length === 0}
           onClick={() => {
             setHint(
-              `The answer was ${target.toUpperCase()}. (Enter to play again)`
+              `La réponse était ${target.toUpperCase()}. (Entrée pour recommencer)`
             );
             setGameState(GameState.Lost);
             (document.activeElement as HTMLElement)?.blur();
           }}
         >
-          Give up
+          Abandon.
         </button>
       </div>
       <table
@@ -320,20 +320,14 @@ function Game(props: GameProps) {
         letterInfo={letterInfo}
         onKey={onKey}
       />
-      <div className="Game-seed-info">
-        {challenge
-          ? "playing a challenge game"
-          : seed
-          ? `${describeSeed(seed)} — length ${wordLength}, game ${gameNumber}`
-          : "playing a random game"}
-      </div>
+            
       <p>
         <button
           onClick={() => {
-            share("Link copied to clipboard!");
+            share("Lien copié!");
           }}
         >
-          Share a link to this game
+          Partagez un lien vers cette partie.
         </button>{" "}
         {gameState !== GameState.Playing && (
           <button
@@ -343,7 +337,7 @@ function Game(props: GameProps) {
                 : ["⬛", "🟨", "🟩"];
               const score = gameState === GameState.Lost ? "X" : guesses.length;
               share(
-                "Result copied to clipboard!",
+                "Résultat copié dans le presse papier!",
                 `${gameName} ${score}/${props.maxGuesses}\n` +
                   guesses
                     .map((guess) =>

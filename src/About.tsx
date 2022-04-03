@@ -71,15 +71,13 @@ export function About() {
         annotation={"Got it!"}
       />
       <p>
-        Report issues{" "}
-        <a href="https://github.com/lynn/hello-wordl/issues">here</a>, or tweet{" "}
-        <a href="https://twitter.com/chordbug">@chordbug</a>.
+        Un souci? {" "}
+        <a href="https://github.com/kelu124/artemise/issues">Cliquez ici</a>.
       </p>
       <p>
-        This game will be free and ad-free forever,
+        Ce jeu est gratuit et adapté d'un autre jeu,
         <br />
-        but you can <a href="https://ko-fi.com/chordbug">buy me a coffee</a> if
-        you'd like.
+        mais vous pouvez <a href="https://ko-fi.com/kelu124">m'offrir un café</a>  si le coeur vous en dit.
       </p>
     </div>
   );
