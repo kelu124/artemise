@@ -3,7 +3,7 @@ import { Row, RowState } from "./Row";
 import dictionary from "./dictionary.json";
 import { Clue, clue, describeClue, violation } from "./clue";
 import { Keyboard } from "./Keyboard";
-import * as targetList from "./targets.json";
+import targetList from "./targets.json";
 import definitionList from "./dictionary_def.json";
 import {
   describeSeed,
