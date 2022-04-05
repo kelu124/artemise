@@ -4,7 +4,6 @@ import dictionary from "./dictionary.json";
 import { Clue, clue, describeClue, violation } from "./clue";
 import { Keyboard } from "./Keyboard";
 import targetList from "./targets.json";
-import definitionList from "./dictionary_def.json";
 import {
   describeSeed,
   dictionarySet,
@@ -32,7 +31,7 @@ interface GameProps {
   keyboardLayout: string;
 }
 
-const targets = targetList;//.slice(0, targetList.indexOf("murky") + 1); // Words no rarer than this one
+const targets = Object.keys(targetList);//.slice(0, targetList.indexOf("murky") + 1); // Words no rarer than this one
 const minLength = 4;
 const defaultLength = 5;
 const maxLength = 11;
@@ -57,7 +56,7 @@ function getChallengeUrl(target: string): string {
   );
 }
 
-const definitionMap:Map<string,string> = new Map(Object.entries(definitionList))
+const definitionMap:Map<string,string> = new Map(Object.entries(targetList))
 function get_definition(target:string):string|undefined {
   return definitionMap.get(target)
 }
