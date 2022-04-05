@@ -200,7 +200,7 @@ function Game(props: GameProps) {
       setCurrentGuess((guess) => "");
 
       const gameOver = (verbed: string) =>
-        `Vous avez ${verbed}! La réponse ${target.toUpperCase()} (${get_definition(target)}). (Entrée pour ${
+        `Vous avez ${verbed}! La réponse ${target.toUpperCase()}: ${get_definition(target)}. (Entrée pour ${
           challenge ? "jouer à un autre jeu" : "recommencer"
         })`;
 
