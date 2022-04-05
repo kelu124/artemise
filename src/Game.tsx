@@ -3,7 +3,8 @@ import { Row, RowState } from "./Row";
 import dictionary from "./dictionary.json";
 import { Clue, clue, describeClue, violation } from "./clue";
 import { Keyboard } from "./Keyboard";
-import targetList from "./targets.json";
+import * as targetList from "./targets.json";
+import definitionList from "./dictionary_def.json";
 import {
   describeSeed,
   dictionarySet,
@@ -54,6 +55,11 @@ function getChallengeUrl(target: string): string {
     "?challenge=" +
     encode(target)
   );
+}
+
+const definitionMap:Map<string,string> = new Map(Object.entries(definitionList))
+function get_definition(target:string):string|undefined {
+  return definitionMap.get(target)
 }
 
 let initChallenge = "";
@@ -194,7 +200,7 @@ function Game(props: GameProps) {
       setCurrentGuess((guess) => "");
 
       const gameOver = (verbed: string) =>
-        `Vous avez ${verbed}! La réponse ${target.toUpperCase()}. (Entrée pour ${
+        `Vous avez ${verbed}! La réponse ${target.toUpperCase()} (${get_definition(target)}). (Entrée pour ${
           challenge ? "jouer à un autre jeu" : "recommencer"
         })`;
 
