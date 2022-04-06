@@ -31,7 +31,7 @@ interface GameProps {
   keyboardLayout: string;
 }
 
-const targets = targetList;//.slice(0, targetList.indexOf("murky") + 1); // Words no rarer than this one
+const targets = Object.keys(targetList);//.slice(0, targetList.indexOf("murky") + 1); // Words no rarer than this one
 const minLength = 4;
 const defaultLength = 5;
 const maxLength = 11;
@@ -54,6 +54,11 @@ function getChallengeUrl(target: string): string {
     "?challenge=" +
     encode(target)
   );
+}
+
+const definitionMap:Map<string,string> = new Map(Object.entries(targetList))
+function get_definition(target:string):string|undefined {
+  return definitionMap.get(target)
 }
 
 let initChallenge = "";
@@ -194,7 +199,7 @@ function Game(props: GameProps) {
       setCurrentGuess((guess) => "");
 
       const gameOver = (verbed: string) =>
-        `Vous avez ${verbed}! La réponse ${target.toUpperCase()}. (Entrée pour ${
+        `Vous avez ${verbed}! La réponse ${target.toUpperCase()}: ${get_definition(target)}. (Entrée pour ${
           challenge ? "jouer à un autre jeu" : "recommencer"
         })`;
 
