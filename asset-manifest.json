@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/artemise/static/css/main.3ba1d3fa.css",
-    "main.js": "/artemise/static/js/main.f85f0cb5.js",
+    "main.js": "/artemise/static/js/main.44e4dee2.js",
     "index.html": "/artemise/index.html",
     "main.3ba1d3fa.css.map": "/artemise/static/css/main.3ba1d3fa.css.map",
-    "main.f85f0cb5.js.map": "/artemise/static/js/main.f85f0cb5.js.map"
+    "main.44e4dee2.js.map": "/artemise/static/js/main.44e4dee2.js.map"
   },
   "entrypoints": [
     "static/css/main.3ba1d3fa.css",
-    "static/js/main.f85f0cb5.js"
+    "static/js/main.44e4dee2.js"
   ]
 }
