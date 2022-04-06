@@ -78,8 +78,7 @@ function App() {
             fontStyle: difficulty > 1 ? "italic" : "inherit",
           }}
         >
-          Patois 
-           d'Artemise        </span>
+          Yauque</span>
       </h1>
       <div className="top-right">
         {page !== "game" ? (
@@ -134,7 +133,7 @@ function App() {
               onChange={(e) => setDifficulty(+e.target.value)}
             />
             <div>
-              <label htmlFor="difficulty-setting">Difficulté:</label>
+              <label htmlFor="difficulty-setting">Difficulté: </label>
               <strong>{["Normale", "Dure", "Super dure"][difficulty]}</strong>
               <div
                 style={{

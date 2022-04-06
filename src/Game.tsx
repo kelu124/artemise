@@ -199,7 +199,9 @@ function Game(props: GameProps) {
       setCurrentGuess((guess) => "");
 
       const gameOver = (verbed: string) =>
-        `Vous avez ${verbed}! La réponse ${target.toUpperCase()}: ${get_definition(target)}. (Entrée pour ${
+        `Vous avez ${verbed}! La réponse était ${target.toUpperCase()}: 
+        \n ${get_definition(target)}. 
+        \n (Entrée pour ${
           challenge ? "jouer à un autre jeu" : "recommencer"
         })`;
 
@@ -294,7 +296,8 @@ function Game(props: GameProps) {
           disabled={gameState !== GameState.Playing || guesses.length === 0}
           onClick={() => {
             setHint(
-              `La réponse était ${target.toUpperCase()}. (Entrée pour recommencer)`
+              `La réponse était ${target.toUpperCase()}: 
+              \n ${get_definition(target)}. \n\n (Entrée pour recommencer)`
             );
             setGameState(GameState.Lost);
             (document.activeElement as HTMLElement)?.blur();
