@@ -1,7 +1,7 @@
 {
   "name": "patoisdartemise",
   "version": "0.1.1",
-  "homepage": "https://kelu124.github.io/artemise/",
+  "homepage": "https://yauque.org/",
   "private": false,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.1",
