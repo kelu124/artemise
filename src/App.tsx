@@ -60,7 +60,7 @@ function App() {
 
   const link = (emoji: string, label: string, page: Page) => (
     <button
-      className="emoji-link"
+      className="emoji-link" 
       onClick={() => setPage(page)}
       title={label}
       aria-label={label}
